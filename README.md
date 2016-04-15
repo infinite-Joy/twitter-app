@@ -1,14 +1,14 @@
 # Twitter Python QuickStart
 with code contributions and references taken from [Google Plus QuickStart Python](https://github.com/googleplus/gplus-quickstart-python)
 
-# System Requirements
+## System Requirements
 - [Python2.7](https://www.python.org/)
 - [Flask](http://flask.pocoo.org/)
 
-# Step 1: Enable the Twitter API
+## Step 1: Enable the Twitter API
 This needs to be updated
 
-# Step 2: Set up the Python quick-start app
+## Step 2: Set up the Python quick-start app
 1. Get the latest version of the quick-start. One way is to use git to clone the [application repository](https://github.com/infinite-Joy/twitter-app).
 ```
 git clone https://github.com/infinite-Joy/twitter-app.git
@@ -26,7 +26,7 @@ cd twitter-app
 
 ```pip install -r requirements.txt```
 
-# Step 3: Run the quick-start app
+## Step 3: Run the quick-start app
 1. Run the Python quick-start app:
 ```python main_flask_server.py```
 
