@@ -1,0 +1,80 @@
+<!--
+
+/*
+ *
+ * Copyright 2015 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+-->
+
+<html>
+<head>
+  <title>{{ APPLICATION_NAME }}</title>
+  <script type="text/javascript">
+  var auth2 = auth2 || {};
+
+  (function() {
+    var po = document.createElement('script');
+    po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://plus.google.com/js/client:plusone.js?onload=startApp';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+  })();
+  </script>
+  <!-- JavaScript specific to this application that is not related to API
+     calls -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" ></script>
+</head>
+<style>
+    #customBtn {
+      width: 155px;
+    }
+    #customBtn:hover {
+      box-shadow: 2px 2px 3px #888888;
+      border-radius: 5px;
+      cursor: hand;
+    }
+</style>
+<body>
+  <div id="gConnect" >
+    <img id="customBtn" src="/signin_button.png" onClick="signInClick()"
+        alt="Sign in with Twitter" />
+  </div>
+</body>
+<script type="text/javascript">
+/**
+ * Either signs the user in or authorizes the back-end.
+ */
+function signInClick() {
+  var signIn = function(result) {
+      auth2.signIn().then(
+        function(googleUser) {
+          onSignInCallback(googleUser.getAuthResponse());
+        }, function(error) {
+          alert(JSON.stringify(error, undefined, 2));
+        });
+    };
+
+  var reauthorize = function() {
+      auth2.grantOfflineAccess().then(
+        function(result){
+          helper.connectServer(result.code);
+        });
+    };
+
+  helper.people(signIn, reauthorize);
+}
+</script>
+</html>
