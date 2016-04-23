@@ -2,8 +2,6 @@
 
 /*
  *
- * Copyright 2015 Google Inc.
- *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -48,33 +46,9 @@
     }
 </style>
 <body>
-  <div id="gConnect" >
-    <img id="customBtn" src="/signin_button.png" onClick="signInClick()"
-        alt="Sign in with Twitter" />
-  </div>
+  <form action="" method="post">
+    <p><input type=text name=username>
+    <p><input type=submit value=Login>
+  </form>
 </body>
-<script type="text/javascript">
-/**
- * Either signs the user in or authorizes the back-end.
- */
-function signInClick() {
-  var signIn = function(result) {
-      auth2.signIn().then(
-        function(googleUser) {
-          onSignInCallback(googleUser.getAuthResponse());
-        }, function(error) {
-          alert(JSON.stringify(error, undefined, 2));
-        });
-    };
-
-  var reauthorize = function() {
-      auth2.grantOfflineAccess().then(
-        function(result){
-          helper.connectServer(result.code);
-        });
-    };
-
-  helper.people(signIn, reauthorize);
-}
-</script>
 </html>
