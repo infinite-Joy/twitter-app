@@ -50,12 +50,12 @@ app.secret_key = ''.join(random.choice(string.ascii_uppercase + string.digits)
 #@webserver.route("/oauth_helper")
 @app.route("/oauth_helper")
 def oauth_helper():
-    
+
     oauth_verifier = request.args.get('oauth_verifier')
 
       # Pick back up credentials from ipynb_oauth_dance
     oauth_token, oauth_token_secret = read_token_file(OAUTH_FILE)
-    
+
     _twitter = twitter.Twitter(
         auth=twitter.OAuth(
             oauth_token, oauth_token_secret, CONSUMER_KEY, CONSUMER_SECRET),
@@ -75,7 +75,7 @@ def oauth_helper():
 
 
 def ipynb_oauth_dance():
-    
+
     _twitter = twitter.Twitter(
         auth=twitter.OAuth('', '', CONSUMER_KEY, CONSUMER_SECRET),
         format='', api_version=None)
@@ -86,11 +86,11 @@ def ipynb_oauth_dance():
     # Need to write these interim values out to a file to pick up on the callback from Twitter
     # that is handled by the web server in /oauth_helper
     write_token_file(OAUTH_FILE, oauth_token, oauth_token_secret)
-    
+
     oauth_url = ('http://api.twitter.com/oauth/authorize?oauth_token=' + oauth_token)
     oauth_url = oauth_url.replace("http", "https")
     print oauth_url
-    
+
     # Tap the browser's native capabilities to access the web server through a new window to get
     # user authorization
     webbrowser.open_new(oauth_url)

@@ -6,7 +6,11 @@ with code contributions and references taken from [Google Plus QuickStart Python
 - [Flask](http://flask.pocoo.org/)
 
 ## Step 1: Enable the Twitter API
-This needs to be updated
+This seems like a good resource for step by step documentation with screenshots regarding the twitter api.
+
+[how to get api key and secret](http://support.heateor.com/how-to-get-twitter-api-key-and-secret)
+
+Please suggest if any better resources are out there.
 
 ## Step 2: Set up the Python quick-start app
 1. Get the latest version of the quick-start. One way is to use git to clone the [application repository](https://github.com/infinite-Joy/twitter-app).
@@ -20,7 +24,7 @@ wget https://github.com/infinite-Joy/twitter-app/archive/master.zip -o twitter-a
 
 2. Change directory into the quick-start app
 
-cd twitter-app
+    cd twitter-app
 
 3. Install the requirements of this quick start
 
@@ -28,6 +32,7 @@ cd twitter-app
 
 ## Step 3: Run the quick-start app
 1. Run the Python quick-start app:
+
 ```python main_flask_server.py```
 
-2. Browse to your quick-start app, which by default is at http://localhost:4864.
+2. Browse to your quick-start app, which by default is at http://localhost:4864
