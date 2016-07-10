@@ -24,7 +24,9 @@ wget https://github.com/infinite-Joy/twitter-app/archive/master.zip -o twitter-a
 
 2. Change directory into the quick-start app
 
-    cd twitter-app
+```
+cd twitter-app
+```
 
 3. Install the requirements of this quick start
 
