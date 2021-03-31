@@ -28,7 +28,7 @@ httplib2==0.9
 idna==2.0
 ipaddress==1.0.14
 lockfile==0.10.2
-lxml==3.4.4
+lxml==4.6.3
 meld==3.14.0
 mercurial==3.4
 ndg-httpsclient==0.4.0
